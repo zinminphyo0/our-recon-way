@@ -41,3 +41,7 @@ curl -s "https://crt.sh/?q=%25.$1&output=json" | jq -r '.[].name_value' | sed 's
 
 # Sort & tested domains from Recon.dev
 curl "https://recon.dev/api/search?key=apikey&domain=$1" | jq -r '.[].rawDomains[]' | sed 's/ //g' | sort -u >> "$2"
+
+## usage: 
+## chmod +x sub-api.sh
+## ./sub-api.sh hackerone.com output.txt
