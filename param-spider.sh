@@ -19,3 +19,6 @@ while IFS= read -r subdomain; do
     # Extract parameters from crawled URLs
     cat "output/$subdomain-output.txt" | grep -oE '(\?|&)([^=]+)=' | cut -d'=' -f1 | sort -u > "output/$subdomain-params.txt"
 done < "$subdomains_file"
+
+## chmod +x param-spider.sh
+## ./param-spider.sh
